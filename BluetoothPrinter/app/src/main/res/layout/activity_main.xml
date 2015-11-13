@@ -2,46 +2,44 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="@dimen/activity_vertical_margin"
     android:background="#eeeeee">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#d9d7d7"
         android:padding="@dimen/activity_vertical_margin">
 
-        <Button
+        <ImageButton
             android:id="@+id/btn_enable"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:visibility="gone"
-            android:text="@string/enable_bluetooth" />
+            android:layout_toLeftOf="@+id/btn_connect"
+            android:src="@android:drawable/ic_menu_search" />
 
-        <Button
+        <ImageButton
             android:id="@+id/btn_connect"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_alignParentTop="true"
-            android:text="@string/action_connect" />
+            android:src="@android:drawable/ic_menu_send"/>
 
         <Spinner
             android:id="@+id/sp_device"
-            android:layout_toLeftOf="@+id/btn_connect"
+            android:layout_toLeftOf="@+id/btn_enable"
             android:layout_alignBottom="@+id/btn_connect"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"/>
-
     </RelativeLayout>
 
     <EditText
         android:paddingTop="@dimen/activity_vertical_margin"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:padding="@dimen/activity_vertical_margin"
+        android:padding="@dimen/activity_horizontal_margin"
         android:id="@+id/editText"
         android:hint="Text to Print" />
 
