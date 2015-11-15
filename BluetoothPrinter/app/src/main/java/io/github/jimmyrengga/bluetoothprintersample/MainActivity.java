@@ -89,15 +89,22 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    sendData(charArrToBytesASCII(EpsonT5Command.RESET));
-                    sendData(charArrToBytesASCII(EpsonT5Command.BOLD_ON));
-                    sendData(stringToBytesASCII("Hello World !"));
+//                    sendData(charArrToBytesASCII(EpsonT5Command.RESET));
+                    sendData(charArrToBytesASCII(EpsonT5Command.MODE(false, false, true, false, false)));
+                    sendData(stringToBytesASCII("Hello World.\n"));
+                    sendData(charArrToBytesASCII(EpsonT5Command.MODE(false, false, false, false, false)));
+                    sendData(stringToBytesASCII("Hello World.\n"));
 //                    sendData(charArrToBytesASCII(EpsonT5Command.RESET));
 //                    sendData(charToBytesASCII(EpsonT5Command.LF));
-                    sendData(stringToBytesASCII("++++++++++"));
-//                    sendData(charToBytesASCII(EpsonT5Command.LF));
-                    sendData(charArrToBytesASCII(EpsonT5Command.BOLD_OFF));
-                    sendData(stringToBytesASCII("Hello World !"));
+                    sendData(charArrToBytesASCII(EpsonT5Command.MODE(true, false, false, false, false)));
+                    sendData(stringToBytesASCII("12345678901234567890123456789012"));
+                    sendData(charArrToBytesASCII(EpsonT5Command.MODE(true, false, true, false, false)));
+                    sendData(stringToBytesASCII("12345678901234567890123456789012"));
+//                    sendData(charArrToBytesASCII(EpsonT5Command.BOLD_ON));
+//                    sendData(charArrToBytesASCII(EpsonT5Command.BOLD_OFF));
+                    sendData(charArrToBytesASCII(EpsonT5Command.MODE(false, false, false, false, false)));
+                    sendData(stringToBytesASCII("Hello World! "));
+                    sendData(charToBytesASCII(EpsonT5Command.LF));
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

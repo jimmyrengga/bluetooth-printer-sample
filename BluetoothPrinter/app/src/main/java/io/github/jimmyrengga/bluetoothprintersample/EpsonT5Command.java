@@ -54,6 +54,35 @@ public class EpsonT5Command {
     // Aligment Right
     public static final char[] ALIGNMENT_RIGHT = {ESC, (char) 97, '2'};
 
+    public static final char[] MODE(boolean font,
+                                    boolean isBold,
+                                    boolean isDoubleHeight,
+                                    boolean isDoubleWidth,
+                                    boolean isUnderline) {
+        int n = 0;
 
+        if(font) {
+            n += 1;
+        }
+
+        if(isBold) {
+            n += 8;
+        }
+
+        if(isDoubleHeight) {
+            n += 16;
+        }
+
+        if(isDoubleWidth) {
+            n += 32;
+        }
+
+        if(isUnderline) {
+            n += 128;
+        }
+
+        System.out.println("nilai n = " + n);
+        return new char[]{ESC, (char) 33, (char) n};
+    }
 
 }
